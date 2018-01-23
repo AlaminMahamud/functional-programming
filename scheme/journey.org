@@ -27,6 +27,17 @@ sudo apt-get install -y racket
 
 usage: to run scheme type =M-x run-scheme=
 
-
-* The Emacs
-
+* The Little Schemer
+** the ten commandments
+** the five rules
+** toys
+** do it, do it again, and again, and again ...
+** cons the magnificent
+** numbers games
+** *Oh My Gawd*: It's full of stars
+** Shadows
+** Friends and relations
+** Lambda the ultimate
+** ...  and again, and again, and again, ...
+** what is the value of all of this?
+** Intermission
