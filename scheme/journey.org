@@ -1,0 +1,32 @@
+#+TITLE: Scheme Journey
+#+AUTHOR: Md. Alamin Mahamud
+#+EMAIL: alamin.ineedahelp@gmail.com
+
+* Installation
+
+ref:
++ [[http://community.schemewiki.org/?emacs-tutorial][scheme in emacs]]
++ [[https://www.youtube.com/watch?v=J5jxMRlXvDw][youtube video]]
+
+#+begin_src emacs-lisp
+  ;; Always do syntax highlighting
+  (global-font-lock-mode 1)
+
+  ;; Also highlight parens
+  (setq show-paren-delay 0
+        show-paren-style 'parenthesis)
+  (show-paren-mode 1)
+
+  ;;; This is the binary name of my scheme implementation
+  (setq scheme-program-name "mzscheme")
+#+end_src
+
+#+begin_src shell
+sudo apt-get install -y racket
+#+end_src
+
+usage: to run scheme type =M-x run-scheme=
+
+
+* The Emacs
+
