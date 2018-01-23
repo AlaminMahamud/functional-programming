@@ -18,7 +18,7 @@ ref:
   (show-paren-mode 1)
 
   ;;; This is the binary name of my scheme implementation
-  (setq scheme-program-name "mzscheme")
+  (setq scheme-program-name "scm")
 #+end_src
 
 #+begin_src shell
@@ -30,6 +30,16 @@ usage: to run scheme type =M-x run-scheme=
 * The Little Schemer
 ** the ten commandments
 ** the five rules
+** preface:
+   
+   recursion is schema's natural computational mechanism.
+   #+begin_src scheme
+     (define atom?
+       (lambda (x)
+         (and (not (pair? x))
+              (not (null? x)))))
+   #+end_src
+
 ** toys
 ** do it, do it again, and again, and again ...
 ** cons the magnificent
