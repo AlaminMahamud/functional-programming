@@ -31,6 +31,9 @@ usage: to run scheme type =M-x run-scheme=
 ** the ten commandments
    + *First Commandment* : always ask =null?= as the first question in
      expressing any function.
+   + *Second Commandment*: use =cons= to build lists.
+   + *Third Commandment*: when building a list, describe the first
+     typical element, and then cons it onto the natural recursion.
 ** the five rules
 ** preface:
    
@@ -117,6 +120,39 @@ usage: to run scheme type =M-x run-scheme=
                  ((eq? (car lat) a) (cdr lat))
                  (else (rember a (cdr lat))))))))
    #+end_src
+   #+begin_src scheme
+  (define rember 
+    (lambda (a lat)
+      (cond
+       ((null? lat) (quote ()))
+       (else (cond ((eq? a (car lat)) (cdr lat))
+                   (else (rember a (cdr lat))))))))
+#+end_src
+
+   define insertR
+   #+begin_src scheme
+          (define insertR
+            (lambda new old lat
+                    (cond
+                     ((null? lat) (quote ()))
+                     (else (cond
+                            ((eq? old (car lat))
+                             (cons new (cdr lat)))
+                            (else (cons (car lat)
+                                        (insertR new old
+                                                 (cdr lat)))))))))
+   #+end_src
+#+begin_src scheme
+  (define insertL
+    (lambda (new old lat)
+      (cond
+       ((null? lat) (quote ()))
+       (else (cond
+              ((eq? (car lat) old)
+               (cons new (cons old (cdr lat))))
+              (else (cons (car lat)
+                          (insertL new old (cdr lat)))))))))
+#+end_src
 ** numbers games
 ** *Oh My Gawd*: It's full of stars
 ** Shadows
