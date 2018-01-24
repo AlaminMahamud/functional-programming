@@ -81,6 +81,7 @@ usage: to run scheme type =M-x run-scheme=
      (lat? l)
    #+end_src
 
+   defining member?
    #+begin_src scheme
      (define member?
        (lambda (a lat)
@@ -89,7 +90,6 @@ usage: to run scheme type =M-x run-scheme=
           (else (or (eq? car(lat) a)
                     (member? (a cdr(lat))))))))
    #+end_src
-
 
 ** cons the magnificent
 ** numbers games
