@@ -29,6 +29,8 @@ usage: to run scheme type =M-x run-scheme=
 
 * The Little Schemer
 ** the ten commandments
+   + *First Commandment* : always ask =null?= as the first question in
+     expressing any function.
 ** the five rules
 ** preface:
    
@@ -79,7 +81,16 @@ usage: to run scheme type =M-x run-scheme=
      (lat? l)
    #+end_src
 
-   
+   #+begin_src scheme
+     (define member?
+       (lambda (a lat)
+         (cond
+          ((null? lat) #f)
+          (else (or (eq? car(lat) a)
+                    (member? (a cdr(lat))))))))
+   #+end_src
+
+
 ** cons the magnificent
 ** numbers games
 ** *Oh My Gawd*: It's full of stars
