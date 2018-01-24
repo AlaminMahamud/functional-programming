@@ -41,7 +41,38 @@ usage: to run scheme type =M-x run-scheme=
    #+end_src
 
 ** toys
+   #+begin_src scheme
+     (quote atom)
+     ((xyz) a )
+
+     (a b c)
+     (car '(a b c))
+     (cdr '(a b c))
+
+     (cons 1 2)
+
+     (atom? 1)
+   #+end_src
 ** do it, do it again, and again, and again ...
+   defining atom?
+   #+begin_src scheme
+     (define atom?
+       (lambda
+           (x)
+         (and (not (pair? x))
+              (not (null? x)))))
+   #+end_src
+
+   defining lat?
+   #+begin_src scheme
+
+   #+end_src
+
+   #+begin_src scheme
+  (define l '(Jack Sprat could eat no chicken fat))
+  (lat? l)
+#+end_src
+
 ** cons the magnificent
 ** numbers games
 ** *Oh My Gawd*: It's full of stars
@@ -51,3 +82,15 @@ usage: to run scheme type =M-x run-scheme=
 ** ...  and again, and again, and again, ...
 ** what is the value of all of this?
 ** Intermission
+#+begin_src emacs-lisp
+(message "hello world")
+#+end_src
+
+#+RESULTS:
+: hello world
+
+* Andy Balaam
+#+begin_src scheme
+(define foo 3)
+
+#+end_src
