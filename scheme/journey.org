@@ -92,6 +92,31 @@ usage: to run scheme type =M-x run-scheme=
    #+end_src
 
 ** cons the magnificent
+   #+begin_src scheme
+     (define a 'mint)
+     (define lat '(
+                   lamb
+                   chops
+                   and
+                   mint
+                   flavored
+                   mint
+                   jelly
+                   ))
+     (rember a lat)
+             
+   #+end_src
+
+   define rember
+   #+begin_src scheme
+     (define rember
+       (lambda (a lat)
+         (cond
+          ( (null? lat) (quote ()))
+          (else (cond
+                 ((eq? (car lat) a) (cdr lat))
+                 (else (rember a (cdr lat))))))))
+   #+end_src
 ** numbers games
 ** *Oh My Gawd*: It's full of stars
 ** Shadows
