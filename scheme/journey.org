@@ -142,7 +142,7 @@ usage: to run scheme type =M-x run-scheme=
                                         (insertR new old
                                                  (cdr lat)))))))))
    #+end_src
-#+begin_src scheme
+   #+begin_src scheme
   (define insertL
     (lambda (new old lat)
       (cond
@@ -153,6 +153,15 @@ usage: to run scheme type =M-x run-scheme=
               (else (cons (car lat)
                           (insertL new old (cdr lat)))))))))
 #+end_src
+
+   #+begin_src scheme
+     (define insertL
+       (lambda (new old lat)
+         (cond
+          ((null? lat) (quote ()))
+          ((eq? old (car lat)) (cons ))
+          )))
+   #+end_src
 ** numbers games
 ** *Oh My Gawd*: It's full of stars
 ** Shadows
@@ -168,8 +177,24 @@ usage: to run scheme type =M-x run-scheme=
 #+RESULTS:
 : hello world
 
-* Andy Balaam
-#+begin_src scheme
-(define foo 3)
+* Andy Balaam - Scheme videos
 
-#+end_src
+  #+begin_src scheme
+    (define foo 3)
+  #+end_src
+
+  #+begin_src scheme
+    (define (square x)
+      (* x x))
+  #+end_src
+
+  #+begin_src scheme
+    (define (abs x)
+      (if (< x 0)
+          (- x)
+          x))
+  #+end_src
+
+  #+begin_src scheme
+    (sort (list 1 10 9))
+  #+end_src
