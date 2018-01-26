@@ -1,0 +1,20 @@
+* Org Mode
+  #+begin_src emacs-lisp
+  (setenv "BROWSER" "google-chrome")
+  #+end_src
+
+  #+begin_src emacs-lisp
+    (add-hook 'org-mode-hook
+              (lambda () (org-bullets-mode 1)))
+    (custom-set-variables
+     '(org-directory "~/Dropbox/org")
+     '(org-default-notes-file (concat org-directory "/notes.org"))
+     '(org-export-html-postamble nil)
+     '(org-hide-leading-stars t)
+     '(org-startup-folded (quote overview))
+     '(org-startup-indented t))
+
+
+
+  #+end_src
+  [[~/Dropbox/books/cv.pdf][cv]]
