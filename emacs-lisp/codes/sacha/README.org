@@ -1,0 +1,54 @@
+* Starting Up
+  #+begin_src emacs-lisp
+    ;; This sets up the load path so that we can override it
+    (package-initialize)
+    (add-to-list 'load-path "~/code/org2blog")
+    (add-to-list 'load-path "~/Dropbox/2014/presentations/org-reveal")
+    (add-to-list 'load-path "/usr/local/share/emacs/site-lisp")
+    (setq custom-file "~/.emacs.d/custom-settings.el")
+    (load custom-file t)
+  #+end_src
+** helm grep book notes
+
+   #+begin_src emacs-lisp
+     (defvar my/book-notes-directory "~/Dropbox/org/books")
+     (defun my/helm-do-grep-book-notes ()
+       "Search my book notes."
+       (interactive)
+       (helm-do-grep-1 (list my/book-notes-directory)))
+   #+end_src
+
+
+
+
+* Personal Information
+  #+begin_src emacs-lisp
+      (setq user-full-name "Alamin Mahamud"
+            user-email-address "alamin.ineedahelp@gmail.com")
+  #+end_src
+* Emacs init
+** Add package sources
+   #+begin_src emacs-lisp
+     (unless (assoc-default "melpa" package-archives)
+       (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t))
+     (unless (assoc-default "org" package-archives)
+       (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t))
+   #+end_src
+** Add my elisp dir and other files
+   #+begin_src emacs-lisp
+          (add-to-list 'load-path "~/elisp")
+          (unless (package-installed-p 'use-package)
+            (package-install 'use-package))
+          (setq use-package-verbose t)
+          (setq use-package-always-ensure t)
+          (require 'use-package)
+          (use-package auto-compile
+            :config
+            (auto-compile-on-load-mode)
+            (auto-compile-on-save-mode)
+            (setq load-prefer-newer t))
+   #+end_src
+** load secrets
+   #+begin_src emacs-lisp
+   (load "~/.emacs.secrets" t)
+   #+end_src
