@@ -29,11 +29,17 @@ usage: to run scheme type =M-x run-scheme=
 
 * The Little Schemer
 ** the ten commandments
-   + *First Commandment* : always ask =null?= as the first question in
-     expressing any function.
+   + *First Commandment* : 
+     When recurring on a list of atoms, lat, ask two questions about it: ( null ? lat) and else. When recurring on a number, n , ask two questions about it: (zero? n) and else.
    + *Second Commandment*: use =cons= to build lists.
    + *Third Commandment*: when building a list, describe the first
      typical element, and then cons it onto the natural recursion.
+   + *Fourth Commandment*: Always change at least one argument while recurring. It
+must be changed to be closer to termination. The changing
+argument must be tested in the termination condition:
+when using cdr, test termination with null?.
+   + *Fifth Commandment*: for + terminating => 0 for * => 1 for list terminating => ()
+
 ** the five rules
 ** preface:
    
